@@ -1,47 +1,52 @@
-[{
-    "UTC": 2,
-    "CityName": "Thuin",
-    "Storm": {
-        "UVIndex": "1",
-        "WindDirection": "E",
-        "RainDaily": 0,
-        "WindGust": 0,
-        "SustainedWindSpeed": 0,
-        "RainRate": 0,
-        "24hRain": 0
+{
+    "devices": {
+        "thermostats": {
+            "oJHB1ha6NGOT9493h-fcJY--gS80WzmN": {
+                "humidity": 50,
+                "locale": "fr-FR",
+                "temperature_scale": "C",
+                "is_using_emergency_heat": false,
+                "has_fan": false,
+                "software_version": "5.6.1-4",
+                "has_leaf": false,
+                "device_id": "oJHB1ha6NGOT9493h-fcJY--gS80WzmN",
+                "name": "Dining Room",
+                "can_heat": true,
+                "can_cool": false,
+                "target_temperature_c": 22.0,
+                "target_temperature_f": 72,
+                "target_temperature_high_c": 24.0,
+                "target_temperature_high_f": 75,
+                "target_temperature_low_c": 20.0,
+                "target_temperature_low_f": 68,
+                "ambient_temperature_c": 27.5,
+                "ambient_temperature_f": 82,
+                "away_temperature_high_c": 24.0,
+                "away_temperature_high_f": 76,
+                "away_temperature_low_c": 15.0,
+                "away_temperature_low_f": 59,
+                "structure_id": "Nhae1XUqlNalBQ82Pfqf6NEt8rObgjPJgNJyoSL6iahQ92AblzZVZw",
+                "fan_timer_active": false,
+                "fan_timer_timeout": "1970-01-01T00:00:00.000Z",
+                "hvac_mode": "heat",
+                "name_long": "Dining Room Thermostat",
+                "is_online": true,
+                "last_connection": "2017-07-08T10:54:58.388Z"
+            }
+        }
     },
-    "Searchable": true,
-    "DeviceName": "skyThuin",
-    "RegisterTime": 1486946295,
-    "DST": 1,
-    "BoundedPoint": "",
-    "LON": 4.3101,
-    "Point": {},
-    "VideoList": [
-        "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-27.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-28.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-29.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-30.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-31.mp4"
-    ],
-    "VideoList_C": [
-        "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-27_C.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-28_C.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-29_C.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-30_C.mp4", "http://s3.amazonaws.com/bskytimelapses/faBiuZWsnpaoqZqr_2_2017-05-31_C.mp4"
-    ],
-    "DeviceID": "442C05954A59",
-    "NumOfFollowers": 2,
-    "LAT": 50.3394,
-    "ALT": 195,
-    "Data": {
-        "Luminance": 9999,
-        "Temperature": 70.79,
-        "ImageURL": "http://s3-us-west-1.amazonaws.com/bskyimgs/faBiuZWsnpaoqZqrqJ1kr5uqmZammJw=.jpg",
-        "TS": 1496365207,
-        "Rain": true,
-        "Humidity": 64,
-        "Pressure": 29.41,
-        "DeviceType": "SKY2",
-        "Voltage": 2611,
-        "Night": false,
-        "UVIndex": 9999,
-        "ImageTS": 1496345207
+    "structures": {
+        "Nhae1XUqlNalBQ82Pfqf6NEt8rObgjPJgNJyoSL6iahQ92AblzZVZw": {
+            "name": "Gosselies",
+            "country_code": "BE",
+            "time_zone": "Europe/Brussels",
+            "away": "home",
+            "thermostats": ["oJHB1ha6NGOT9493h-fcJY--gS80WzmN"],
+            "structure_id": "Nhae1XUqlNalBQ82Pfqf6NEt8rObgjPJgNJyoSL6iahQ92AblzZVZw"
+        }
     },
-    "FullAddress": "Drève des Alliés, Thuin, Wallonie, BE",
-    "StreetName": "Drève des Alliés",
-    "PreviewImageList": ["http://s3-us-west-1.amazonaws.com/bskyimgs/faBiuZWsnpaoqZqrqJ1kr5qwlZOmn5c=.jpg", "http://s3-us-west-1.amazonaws.com/bskyimgs/faBiuZWsnpaoqZqrqJ1kr5qwnZmqmZw=.jpg", "http://s3-us-west-1.amazonaws.com/bskyimgs/faBiuZWsnpaoqZqrqJ1kr5unnJakmZg=.jpg", "http://s3-us-west-1.amazonaws.com/bskyimgs/faBiuZWsnpaoqZqrqJ1kr5uom5Kkm50=.jpg", "http://s3-us-west-1.amazonaws.com/bskyimgs/faBiuZWsnpaoqZqrqJ1kr5upmZiqnps=.jpg"]
-}]
+    "metadata": {
+        "access_token": "c.557wIvHmrNmpYqn2Pwcrd26H1F2CnISzMcErYEiaborOFT6kXPo9dFD9GmYzikNecclfdKPu3gURr2DZoaujFPsd5bx3x1QMPqMWObdmerfZtYDIoxD7IreyinHOprQmk3xPOXneNrqMrdRC",
+        "client_version": 1
+    }
+}
