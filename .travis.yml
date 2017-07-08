@@ -1,0 +1,15 @@
+language: go
+go:
+- master
+install:
+- go get golang.org/x/tools/cmd/cover
+- go get github.com/mattn/goveralls
+- go get .
+script:
+- go test -v -covermode=count -coverprofile=coverage.out
+- echo $COVERALLS_TOKEN
+- "$HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci -repotoken
+  $COVERALLS_TOKEN"
+env:
+  global:
+    secure: 0zcwweQ+K2vUe4SzA2DvmJUOOL4j8pvYpP5uiI62fMTOMMiL2VCKIdMpSAVxocP1xhqWsSBcFSMPOoej/XZ4RFLbgJbgDWb/6FeeAKFdOl/gBhWOk+o179zHugeeJzUoEAca4IaUjoe4CIJmPlEDD0i8umHF4R1LZpzFCBBFQAPi11dwE5ATGKkPV5NOyI78FW9wHZa2VM7DK4ZKISce/3yPyPDA9fp+FFpGNMuodLOf7H3zYK9Tn3VtRMY4ea1w0W7Gl40Hk35EekhX8XqOWGtcdZzdUSwkTEzKiTZKzVFtsOSeWCUMuBjadk+xgN9tkn8cQRq1rsqoNTfitq3RWGffa1cXvDIyszd3RWYiuiK4KHwQ67myeuWHYvo0TxUay6VmM1BR/9B+Z9TFdkTUpj/IxLfVMlrBpHdQHTyXkQ1fnPAvLonkcfr9vIUEwQrkjFLljnajm5NrKvbgH4c8BimCIfPFadQoul0hlwgBeSY7EVo3mHwd/zYKqI5SjZR/u4JCDo0ajFT0KTWBhWg7mXc/1ZTbeVQ3wO2tDrH3+eKnPvpGu0JgHOdChq8Gm09CLpAAB10yrNG2lxnTET7YsuXqgmc7JJGHGe/AKBeanZ6bCYKRCdVTxyBXLagjUTUqqxsdhaKiefanJNCB5BA+5g8g0MpxdjbHHFW/Vx20NM8=
