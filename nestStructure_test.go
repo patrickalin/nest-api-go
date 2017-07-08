@@ -3,7 +3,6 @@ package nestStructure
 import (
 	"os"
 	"testing"
-	"time"
 )
 
 var mynestTest1 Nest
@@ -20,55 +19,55 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
-func TestNestStructure_IsNight(t *testing.T) {
+func TestNestStructure_GetHumidity(t *testing.T) {
 	tests := []struct {
 		name   string
 		fields Nest
-		want   bool
+		want   float64
 	}{
-		{"Day", mynestTest1, false},
-		{"Night", mynestTest2, true},
+		{"Test1", mynestTest1, 50},
+		{"Test2", mynestTest2, 70},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.fields.IsNight(); got != tt.want {
-				t.Errorf("NestStructure.IsNight() = %v, want %v", got, tt.want)
+			if got := tt.fields.GetHumidity(); got != tt.want {
+				t.Errorf("NestStructure.GetHumidity() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func TestNestStructure_GetTimeStamp(t *testing.T) {
-	tests := []struct {
-		name   string
-		fields Nest
-		want   time.Time
-	}{
-		{"Test1", mynestTest1, time.Unix(int64(1496365207), 0)},
-		{"Test2", mynestTest2, time.Unix(int64(1496345207), 0)},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.fields.GetTimeStamp(); got != tt.want {
-				t.Errorf("NestStructure.GetTimeStamp() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func TestNestStructure_GetCity(t *testing.T) {
+func TestNestStructure_GetSoftwareVersion(t *testing.T) {
 	tests := []struct {
 		name   string
 		fields Nest
 		want   string
 	}{
-		{"Test1", mynestTest1, "Thuin"},
-		{"Test2", mynestTest2, "Paris"},
+		{"Test1", mynestTest1, "5.6.1-4"},
+		{"Test2", mynestTest2, "5.6.1-4"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.fields.GetCity(); got != tt.want {
-				t.Errorf("NestStructure.GetCity() = %v, want %v", got, tt.want)
+			if got := tt.fields.GetSoftwareVersion(); got != tt.want {
+				t.Errorf("NestStructure.GetSoftwareVersion() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestNestStructure_GetAmbientTemperatureC(t *testing.T) {
+	tests := []struct {
+		name   string
+		fields Nest
+		want   float64
+	}{
+		{"Test1", mynestTest1, 27.5},
+		{"Test2", mynestTest2, 28.5},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.fields.GetAmbientTemperatureC(); got != tt.want {
+				t.Errorf("NestStructure.GetAmbientTemperatureC() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -80,8 +79,8 @@ func TestNestStructure_GetDeviceId(t *testing.T) {
 		fields Nest
 		want   string
 	}{
-		{"Test1", mynestTest1, "442C05954A59"},
-		{"Test2", mynestTest2, "442C05954A58"},
+		{"Test1", mynestTest1, "oJHB1ha6NGOT9493h-fcJY--gS80WzmN"},
+		{"Test2", mynestTest2, "oJHB1ha6NGOT9493h-fcJY--gS80WzmO"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -92,19 +91,19 @@ func TestNestStructure_GetDeviceId(t *testing.T) {
 	}
 }
 
-func TestNestStructure_GetNumOfFollowers(t *testing.T) {
+func TestNestStructure_GetAmbientTemperatureF(t *testing.T) {
 	tests := []struct {
 		name   string
 		fields Nest
-		want   int
+		want   float64
 	}{
-		{"Test1", mynestTest1, 2},
-		{"Test2", mynestTest2, 3},
+		{"Test1", mynestTest1, 82},
+		{"Test2", mynestTest2, 87},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.fields.GetNumOfFollowers(); got != tt.want {
-				t.Errorf("NestStructure.GetNumOfFollowers() = %v, want %v", got, tt.want)
+			if got := tt.fields.GetAmbientTemperatureF(); got != tt.want {
+				t.Errorf("NestStructure.GetAmbientTemperatureF() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -153,7 +152,7 @@ func TestNewNestFromBody(t *testing.T) {
 	}
 }
 */
-
+/*
 func TestNestStructure_GetIndexUV(t *testing.T) {
 	tests := []struct {
 		name   string
@@ -172,24 +171,26 @@ func TestNestStructure_GetIndexUV(t *testing.T) {
 	}
 
 }
-
-func TestNestStructure_GetTemperatureFahrenheit(t *testing.T) {
+*/
+func TestNestStructure_GetTargetTemperatureF(t *testing.T) {
 	tests := []struct {
 		name   string
 		fields Nest
 		want   float64
 	}{
-		{"Test1", mynestTest1, 70.79},
-		{"Test2", mynestTest2, 65.79},
+		{"Test1", mynestTest1, 72},
+		{"Test2", mynestTest2, 74},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.fields.GetTemperatureFahrenheit(); got != tt.want {
-				t.Errorf("NestStructure.GetTemperatureFahrenheit() = %v, want %v", got, tt.want)
+			if got := tt.fields.GetTargetTemperatureF(); got != tt.want {
+				t.Errorf("NestStructure.GetTargetTemperatureF() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
+
+/*
 
 func TestNestStructure_GetTemperatureCelsius(t *testing.T) {
 	tests := []struct {
@@ -535,10 +536,10 @@ func Test_nest_GetTS(t *testing.T) {
 
 func Test_nest_Refresh(t *testing.T) {
 	type fields struct {
-		url               string
-		token             string
+		url           string
+		token         string
 		NestStructure NestStructure
-		mock              bool
+		mock          bool
 	}
 	tests := []struct {
 		name   string
@@ -549,10 +550,10 @@ func Test_nest_Refresh(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			nest := &nest{
-				url:               tt.fields.url,
-				token:             tt.fields.token,
+				url:           tt.fields.url,
+				token:         tt.fields.token,
 				NestStructure: tt.fields.NestStructure,
-				mock:              tt.fields.mock,
+				mock:          tt.fields.mock,
 			}
 			nest.Refresh()
 		})
@@ -561,10 +562,10 @@ func Test_nest_Refresh(t *testing.T) {
 
 func Test_nest_refreshFromRest(t *testing.T) {
 	type fields struct {
-		url               string
-		token             string
+		url           string
+		token         string
 		NestStructure NestStructure
-		mock              bool
+		mock          bool
 	}
 	tests := []struct {
 		name   string
@@ -575,10 +576,10 @@ func Test_nest_refreshFromRest(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			nest := &nest{
-				url:               tt.fields.url,
-				token:             tt.fields.token,
+				url:           tt.fields.url,
+				token:         tt.fields.token,
 				NestStructure: tt.fields.NestStructure,
-				mock:              tt.fields.mock,
+				mock:          tt.fields.mock,
 			}
 			nest.refreshFromRest()
 		})
@@ -603,3 +604,4 @@ func BenchmarkNestStructureIsNight(b *testing.B) {
 		}
 	}
 }
+*/
