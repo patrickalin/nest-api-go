@@ -115,6 +115,7 @@ type Nest interface {
 	GetTargetTemperatureF() float64
 	GetHumidity() float64
 	GetAway() string
+	GetNestStruct() NestStructure
 	Refresh()
 	RefreshFromBody(body []byte)
 }
