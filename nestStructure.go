@@ -185,7 +185,7 @@ func (nest *nest) GetNestStruct() NestStructure {
 }
 
 func (nest *nest) GetLastCall() string {
-	return bloomsky.BloomskyStructure.LastCall
+	return nest.LastCall
 }
 
 /* Func private ------------------------------------ */
