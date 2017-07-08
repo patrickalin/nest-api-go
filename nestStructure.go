@@ -118,6 +118,7 @@ type Nest interface {
 	GetNestStruct() NestStructure
 	Refresh()
 	RefreshFromBody(body []byte)
+	GetLastCall() string
 }
 
 func (nest *nest) GetDeviceID() string {
@@ -181,6 +182,10 @@ func (nest *nest) Refresh() {
 
 func (nest *nest) GetNestStruct() NestStructure {
 	return nest.NestStructure
+}
+
+func (nest *nest) GetLastCall() string {
+	return bloomsky.BloomskyStructure.LastCall
 }
 
 /* Func private ------------------------------------ */
