@@ -1,4 +1,4 @@
-# BloomSky Client in Go
+# Nest API  in Go
 
 [![Build Status](https://travis-ci.org/patrickalin/nest-api-go.svg?branch=master)](https://travis-ci.org/patrickalin/nest-api-go)
 [![Build size](https://reposs.herokuapp.com/?path=patrickalin/nest-api-go)](https://github.com/patrickalin/nest-api-go)
@@ -11,7 +11,7 @@
 
 The NestStructure package provides APIs for nest device.
 
-## Nest Client Go
+## Nest API  Go
 
 If you want, I have a [runtime client](https://github.com/patrickalin/nest-client-go) which uses this API. 
 
