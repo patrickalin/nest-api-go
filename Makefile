@@ -68,7 +68,9 @@ test: verifiers build
 
 build:
 	@echo "build"
+	@go list -f '{{ .Name }}: {{ .Doc }}'
 	@go generate
+	@go build .
 
 coverage: build
 	@echo "Running all coverage"
@@ -83,6 +85,7 @@ clean:
 	@rm -rf coverage.out
 	@rm -rf prof.cpu
 	@rm -rf nestapi.log
+	@rm -rf torch.svg
 
 documentation:
 	@echo "listen on http://localhost:8081 ctrl+c stop"
@@ -98,6 +101,11 @@ travisGihtub:
 
 torch: bench
 	@echo "Running $@"
-	@export PATH=${PATH}:${GOPATH}/src/github/FlameGraph
-	@go-torch --binaryname ${ARTEFACT}.test -b prof.cpu
+	@PATH=${PATH}:${GOPATH}/src/github/FlameGraph go-torch --binaryname ${ARTEFACT}.test -b prof.cpu
 	@open torch.svg
+
+pprofInteractif: bench
+	go tool pprof nest-api-go.test prof.cpu
+
+pprofRaw: bench
+	go tool pprof -raw nest-api-go.test prof.cpu
