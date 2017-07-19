@@ -105,7 +105,10 @@ torch: bench
 	@open torch.svg
 
 pprofInteractif: bench
-	go tool pprof nest-api-go.test prof.cpu
+	@go tool pprof nest-api-go.test prof.cpu
 
 pprofRaw: bench
-	go tool pprof -raw nest-api-go.test prof.cpu
+	@go tool pprof -raw nest-api-go.test prof.cpu
+
+tag:
+	@(env bash $(PWD)/git/tag.sh)
