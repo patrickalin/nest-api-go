@@ -110,5 +110,5 @@ pprofInteractif: bench
 pprofRaw: bench
 	@go tool pprof -raw nest-api-go.test prof.cpu
 
-tag:
-	@(env bash $(PWD)/git/tag.sh)
+tag: test
+	@(env bash $(PWD)/scripts/git/tag.sh)
