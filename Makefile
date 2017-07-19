@@ -1,6 +1,5 @@
 mPWD := $(shell pwd)
 GOPATH := $(shell go env GOPATH)
-LDFLAGS := $(shell go run scripts/build/gen-ldflags.go)
 PROJECT := patrickalin/nest-api-go
 ARTEFACT := nest-api-go
 
@@ -66,6 +65,9 @@ check: test
 test: verifiers build
 	@echo "Running all testing"
 	@go test $(GOFLAGS) .
+
+build:
+	@echo "build"
 	@go generate
 
 coverage: build
@@ -79,6 +81,8 @@ clean:
 	@rm -rf release
 	@rm -rf coverage.txt
 	@rm -rf coverage.out
+	@rm -rf prof.cpu
+	@rm -rf nestapi.log
 
 documentation:
 	@echo "listen on http://localhost:8081 ctrl+c stop"
