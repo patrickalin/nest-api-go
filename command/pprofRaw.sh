@@ -1,1 +1,0 @@
-go tool pprof -raw nest-api-go.test prof.cpu
