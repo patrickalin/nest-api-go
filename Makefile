@@ -22,7 +22,8 @@ getdeps: checks
 	@echo "Installing misspell" && go get -u github.com/client9/misspell/cmd/misspell
 	@echo "Installing ineffassign" && go get -u github.com/gordonklaus/ineffassign
 	@echo "Installing errcheck" && go get -u github.com/kisielk/errcheck
-	@echo "Installing go-torch" && go get github.com/uber/go-torch 
+	@echo "Installing go-torch" && go get -u github.com/uber/go-torch 
+	@echo "Installing bindata" && go get -u github.com/jteeuwen/go-bindata/
 
 getFlame: 
 	@echo "Installing FlameGraph" && git clone git@github.com:brendangregg/FlameGraph.git ${GOPATH}/src/github/FlameGraph
@@ -65,6 +66,7 @@ check: test
 test: verifiers build
 	@echo "Running all testing"
 	@go test $(GOFLAGS) .
+	@go generate
 
 coverage: build
 	@echo "Running all coverage"

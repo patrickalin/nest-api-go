@@ -2,7 +2,7 @@
 package nestStructure
 
 //go:generate echo Go Generate!
-//go:generate ./command/bindata.sh
+//go:generate ./scripts/build/bindata.sh
 
 import (
 	"encoding/json"
