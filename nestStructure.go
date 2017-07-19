@@ -161,7 +161,7 @@ func New(url, token string, mock bool, l *logrus.Logger) Nest {
 
 	// Read mock file
 	if mock {
-		logWarn(funcName(), "Mock activated !!!", "")
+		logWarn(funcName(), "Mock activated !!!")
 		mockFileByte = readFile(mockFile)
 	}
 
@@ -193,18 +193,18 @@ func (nest *nest) GetLastCall() string {
 func initLog(l *logrus.Logger) {
 	if l != nil {
 		log = l
-		logDebug(funcName(), "Use the logger pass in New", "")
+		logDebug(funcName(), "Use the logger pass in New")
 		return
 	}
 
 	log = logrus.New()
 
-	logDebug(funcName(), "Create new logger", "")
+	logDebug(funcName(), "Create new logger")
 
 	log.Formatter = new(logrus.TextFormatter)
 
 	file, err := os.OpenFile(logFile, os.O_CREATE|os.O_WRONLY, 0666)
-	checkErr(err, funcName(), "Failed to log to file, using default stderr", "")
+	checkErr(err, funcName(), "Failed to log to file, using default stderr")
 
 	log.Out = file
 }
@@ -250,7 +250,7 @@ func (nest *nest) RefreshFromBody(body []byte) {
 	for _, value := range listThermostatsMaps {
 		jsonString, _ := json.Marshal(value)
 		err = json.Unmarshal(jsonString, &oneThermostat)
-		checkErr(err, funcName(), "Problem Unmarshal jsonString", "")
+		checkErr(err, funcName(), "Problem Unmarshal jsonString")
 		nest.NestStructure.Devices.Thermostats.ThermostatID = oneThermostat
 	}
 
@@ -262,7 +262,7 @@ func (nest *nest) RefreshFromBody(body []byte) {
 	for _, value := range listStructuresMaps {
 		jsonString, _ := json.Marshal(value)
 		err = json.Unmarshal(jsonString, &oneStructure)
-		checkErr(err, funcName(), "Problem Unmarshal jsonString2", "")
+		checkErr(err, funcName(), "Problem Unmarshal jsonString2")
 		nest.NestStructure.Structures.StructureID = oneStructure
 	}
 
