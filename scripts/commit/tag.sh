@@ -1,2 +1,2 @@
-git tag -af v0.1 -m "my version 0.1"
+git tag -af v1.0 -m "my version 1.0"
 git push origin --tags
