@@ -183,3 +183,13 @@ func Test_nest_refreshFromRest(t *testing.T) {
 		})
 	}
 }
+
+func Benchmark_GetHumidity(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		mybloomsky := New("", "", true, nil)
+		mybloomsky.RefreshFromBody(readFile(testFile1))
+		if got := mybloomsky.GetHumidity(); got != 50 {
+			b.Errorf("BloomskyStructure.IsNight() = %v, want %v", got, false)
+		}
+	}
+}
