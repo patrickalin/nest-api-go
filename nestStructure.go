@@ -6,7 +6,6 @@ package nestStructure
 
 import (
 	"encoding/json"
-	"math"
 	"os"
 	"time"
 
@@ -208,15 +207,6 @@ func initLog(l *logrus.Logger) {
 	checkErr(err, funcName(), "Failed to log to file, using default stderr", "")
 
 	log.Out = file
-}
-
-func round(num float64) int {
-	return int(num + math.Copysign(0.5, num))
-}
-
-func toFixed(num float64, precision int) float64 {
-	output := math.Pow(10, float64(precision))
-	return float64(round(num*output)) / output
 }
 
 //Read file and return []byte
