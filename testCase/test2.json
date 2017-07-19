@@ -13,7 +13,7 @@
                 "name": "Dining Room",
                 "can_heat": true,
                 "can_cool": false,
-                "target_temperature_c": 22.0,
+                "target_temperature_c": 23.0,
                 "target_temperature_f": 74,
                 "target_temperature_high_c": 24.0,
                 "target_temperature_high_f": 75,
@@ -40,7 +40,7 @@
             "name": "Gosselies",
             "country_code": "BE",
             "time_zone": "Europe/Brussels",
-            "away": "home",
+            "away": "away",
             "thermostats": ["oJHB1ha6NGOT9493h-fcJY--gS80WzmN"],
             "structure_id": "Nhae1XUqlNalBQ82Pfqf6NEt8rObgjPJgNJyoSL6iahQ92AblzZVZw"
         }
